@@ -2,13 +2,17 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Home</title>
+	<title>Binkyung.gg</title>
 </head>
 <body>
-<h1>
-	Hello world!  
+<h1 align="center">
+	　　
+	Binkyung.gg 
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+
+<!--     <footer> -->
+  <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+<!--     </footer> -->
 </body>
 </html>
