@@ -20,6 +20,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <!-- 	typeAliases : 클래스에 부여하는 별칭 -->
 	<typeAliases>
 <!-- 		<typeAlias type="com.bk.binkyung.entity.StudentDto" alias="studentDto"/> -->
-
+		<typeAlias type="com.bk.binkyung.entity.MemberDto" alias="memberDto"/>
 	</typeAliases>
 </configuration>
