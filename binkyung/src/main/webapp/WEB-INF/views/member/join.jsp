@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<form action="/member/join" method="get"> 
+<form action="join" method="post"> 
     
     <div>
-    	아이디 : <input type="text" name="member_id">
+    	아이디 : <input type="text" name="member_id" >
     </div>
     <div>
-    	비밀번호 : <input type="text" name="member_pw">
+    	비밀번호 : <input type="password" name="member_pw">
     </div>
     <div>
     	이름 : <input type="text" name="member_name">

@@ -166,7 +166,16 @@
             <div class="header_right"> 
                 <div class="site">
                     <div class="site_logo">
-                        <button class="login_button">로그인</button>
+                    <c:if test="${userinfo==null}">
+                        <button class="login_button">
+                        	<a href="${pageContext.request.contextPath}/member/login">로그인</a>
+                        </button> 
+                    </c:if>
+                    <c:if test="${userinfo!=null}">    
+                        <button class="login_button">
+                        	<a href="${pageContext.request.contextPath}/member/logout">로그아웃</a>
+                        </button>
+                    </c:if>
                     </div>
                 </div>
             </div>

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<h1 align="center">Binkyung.gg </h1>
+	<h1>${userinfo.member_id}</h1>
 
 </body>
 </html>
