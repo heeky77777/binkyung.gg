@@ -87,7 +87,7 @@
             <br>
             <div class="content">
                 <div class="corp-info">
-                   <img src="/img/footerlogo.png" style="display: block; margin-left: -10px; margin-bottom: 5px;">
+                   <img src="resources/img/footerlogo.png" style="display: block; margin-left: -10px; margin-bottom: 5px;">
                    
                     서울특별시
                     <br>
