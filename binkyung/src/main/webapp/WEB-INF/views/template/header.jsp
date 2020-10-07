@@ -73,10 +73,26 @@
         cursor: pointer;
     }
 
-    /* .site-family--on .site-family-list{
+    /* .site-family_on .site-family-list{
         display: block;
+        
     } */
+    .site-family-list_on{
+        display: block;
+        position: absolute;
+        width: 472px;
+        top: auto;
+        left: auto;
+        transform: none;
+        padding-left: 8px;
+        padding-bottom: 8px;
+        box-sizing: border-box;
+        background: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,.15);
+        z-index: 100;
+    }
     .site-family-list{
+        display: none;
         position: absolute;
         width: 472px;
         top: auto;
@@ -128,7 +144,44 @@
     }
 </style>
 <script>
+    
+    function openmenu(){
 
+        var a = document.getElementById("site-family-list").className
+        console.log(a)
+        if(a == "site-family-list"){
+            document.getElementById("site-family-list").className = "site-family-list_on";
+        }
+
+        if(a == "site-family-list_on"){
+            document.getElementById("site-family-list").className = "site-family-list";
+        }
+    }
+
+    // window.onload=function(){
+
+    //     var body = document.querySelector("body");
+    //     body.addEventListener('click', clickBodyEvent);
+
+    //     function clickBodyEvent(event){
+    //         var target = event.target
+    //         console.log(target);
+    //         var a = event.currentTarget.querySelector(".site-family");
+            
+    //         var b = event.currentTarget.querySelector(".site-family_button");
+    //         var c = event.currentTarget.querySelector(".site-family-list");
+    //         var d = event.currentTarget.querySelector(".site-family-list_item");
+    //         var e = event.currentTarget.querySelector(".site-family-list_title");
+    //         var f = event.currentTarget.querySelector(".site-family-icon");
+    //         var g = event.currentTarget.querySelector(".site-family_name");
+    //         if(a || b || c || d || e || f || g){
+    //             document.getElementById("site-family-list").className = "site-family-list_on";
+    //         }
+    //         else{
+    //             document.getElementById("site-family-list").className = "site-family-list";
+    //         }
+    //     }
+    // }
 </script>
 <body>
     <div class="l_header">
@@ -141,13 +194,13 @@
                         </a>
                     </div>
                     <div class="site-family">
-                        <button class="site-family_button">
+                        <button class="site-family_button" onclick="openmenu();">
                             MENU
                             <div style="float: right;">
                                 <img src="https://talk.op.gg/images/icon-dropdown-down-wh@2x.png" width="30px" style="margin-top: -7px;">
                             </div>
                         </button>
-                        <ul class="site-family-list">
+                        <ul class="site-family-list" id="site-family-list">
                             <li class="site-family-list_title">
                                     <img src="resources/img/footerlogo.png" width="74" alt="BK.GG">
                             </li>
