@@ -4,161 +4,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css">
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   <meta charset="UTF-8">
+   <title>Home</title>
 </head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    .l_header{
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 56px;
+        background-image: linear-gradient(94deg,#ccfffc,#999999);
+        box-sizing: border-box;
+    }
+    header{
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .header_left{
+        float: left;
+    }
+
+    .header_right{
+        float: right;
+    }
+    .login_button{
+        margin-top: 10px;
+        text-align: center;
+        min-width: 80px;
+        line-height: 15px;
+        font-size: 12px;
+        color: black;
+        padding: 8px 0 7px;
+        margin-right: 16px;
+    }
+    .site_logo{
+        float: left;
+        margin-top: 3px;
+    }
+    .site_logo_img{
+        width: 120px;
+        height: 45px;
+        background: url(resources/img/binkyungLogo12.png);
+        background-size: 100%;
+        margin-left: 0;
+    }
+    .site-family{
+        float: left;
+        margin-top: 18px;
+        margin-left: 16px;
+        padding-left: 16px;
+        height: 20px;
+        line-height: 20px;
+        border-left: 1px solid;
+        border-color: rgba(56, 54, 54, 0.5);
+    }
+    .site-family_button{
+        background: none;
+        color: rgb(17, 106, 240);
+        line-height: 17px;
+        font-size: 14px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+    }
+
+    /* .site-family--on .site-family-list{
+        display: block;
+    } */
+    .site-family-list{
+        position: absolute;
+        width: 472px;
+        top: auto;
+        left: auto;
+        transform: none;
+        padding-left: 8px;
+        padding-bottom: 8px;
+        box-sizing: border-box;
+        background: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,.15);
+        z-index: 100;
+    }
+    .site-family-list_title{
+        position: relative;
+        padding-top: 20px;
+        padding-bottom: 16px;
+        padding-left: 24px;
+        line-height: 19px;
+        font-size: 16px;
+        color: #1ea1f7;
+    }
+    .site-family-icon{
+        width: auto;
+        height: auto;
+        display: block;  
+        text-align: center;
+    }
+    .site-family_icon{
+        height: 24px;
+        vertical-align: middle;
+    }
+    .site-family_name{
+        margin-top: 6px;
+        display: block;
+        text-align: center;
+    }
+    .site-family-list_item a {
+        display: block;
+        float: left;
+        width: 152px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        table-layout: fixed;
+        text-decoration: none;
+        color: inherit;
+    }
+    ul{
+        list-style: none;
+    }
+</style>
 <script>
-    // 목표 : .sidebar에 .active를 추가하거나 제거한다
-    // - 추가하거나 제거한다 = 토글한다 = toggle 명령을 사용
-         function toggleSidebar() {
-            var sidebar = document.querySelector(".sidebar");
-            sidebar.classList.toggle("active"); // 클래스 리스트이므로 .을 안찍어도 됨
-        }
-        function sidebar_toggle(){
-            var sidebar_toggle = document.querySelector(".sidebar_toggle");
-            sidebar_toggle.classList.toggle("active");
-        }
-        function sidebar_toggle2(){
-            var sidebar_toggle2 = document.querySelector(".sidebar_toggle2");
-            sidebar_toggle2.classList.toggle("active");
-        }
-        function sidebar_toggle3(){
-            var sidebar_toggle3 = document.querySelector(".sidebar_toggle3");
-            sidebar_toggle3.classList.toggle("active");
-        }
-        function sidebar_toggleAll(){
-            
-            var sidebar_toggle = document.querySelector(".sidebar_toggle");
-            sidebar_toggle.classList.remove("active");
-            
-            var sidebar_toggle2 = document.querySelector(".sidebar_toggle2");
-            sidebar_toggle2.classList.remove("active");
-            
-            var sidebar_toggle3 = document.querySelector(".sidebar_toggle3");
-            sidebar_toggle3.classList.remove("active");
-        }
-    </script>
+
+</script>
 <body>
-    <aside class="sidebar">
-        <ul class="list-group " style="width:100%">
-            <li class="up_background" style="height: 100px; width: 250px;">
-                <img src="${pageContext.request.contextPath}/resources/img/slogo.png" width="240px" height="100px">
-            </li>
-
-            <c:if test="${userinfo.student_auth eq '학생'}">
-                <a class="nav-link nav-list-list" href="#" onclick="sidebar_toggle();">학생</a>
-                    <ul class="nav flex-column sidebar_toggle nav-item-list"> 
-                        <li class="nav-item " style="margin-left: 30px;">
-                            <a class="nav-link" href="${pageContext.request.contextPath}/student/student_info?student_no=${userinfo.student_no}" style="color:white">학생정보</a>
-                        </li>
-                        <li class="nav-item" style="margin-left: 30px;">
-                            <a class="nav-link" href="${pageContext.request.contextPath}/student/student_class_apply" style="color:white">수강신청</a>
-                        </li>
-                        <li class="nav-item" style="margin-left: 30px;">
-                            <a class="nav-link" href="${pageContext.request.contextPath}/student/st_class_apply_list" style="color:white">내 수강신청 목록</a>
-                        </li>
-                        <li class="nav-item" style="margin-left: 30px;">
-                             <a class="nav-link" href="${pageContext.request.contextPath}/student/student_schedule?student_no=${userinfo.student_no}" style="color:white">시간표</a>
-                        </li>
-                        <li class="nav-item" style="margin-left: 30px;">
-                            <a class="nav-link" href="${pageContext.request.contextPath}/score/mylist?student_no=${userinfo.student_no}" style="color:white">성적확인</a>
-                        </li>
-                        <li class="nav-item" style="margin-left: 30px;">
-                            <a class="nav-link" href="${pageContext.request.contextPath}/schoolonoff/off?student_no=${userinfo.student_no}" style="color:white">휴학신청</a>
-                        </li>
-                        <li class="nav-item" style="margin-left: 30px;">
-                            <a class="nav-link" href="${pageContext.request.contextPath}/schoolonoff/on?student_no=${userinfo.student_no}" style="color:white">복학신청</a>
-                        </li>
-
-                    </ul>
-                </c:if>
-                
-                <c:if test="${profeinfo.profe_auth eq '교수'}">    
-	                <a class="nav-link nav-list-list" href="#" onclick="sidebar_toggle2();">교수</a>
-	                    <ul class="nav flex-column sidebar_toggle2 nav-item-list">
-	                        <li class="nav-item" style="margin-left: 30px;">
-	                            <a class="nav-link" href="${pageContext.request.contextPath}/professor/detail?profe_no=${profeinfo.profe_no}" style="color:white">교수정보</a>
-	                        </li>
-	                        <li class="nav-item" style="margin-left: 30px;">
-	                            <a class="nav-link" href="${pageContext.request.contextPath}/class_subject/regist" style="color:white">강의등록</a>
-	                        </li>
-	                        <li class="nav-item" style="margin-left: 30px;">
-	                            <a class="nav-link" href="${pageContext.request.contextPath}/class_subject/list" style="color:white">강의목록</a>
-	                        </li>
-	                        <li class="nav-item" style="margin-left: 30px;">
-	                            <a class="nav-link" href="${pageContext.request.contextPath}/class_subject/profeApplyList" style="color:white">수강목록</a>
-	                        </li>
-	                    </ul>
-	                 </c:if>
-	                 
-                 <c:if test="${admininfo.admin_auth eq '관리자'}">               
-	                 <a class="nav-link nav-list-list" href="#" onclick="sidebar_toggle3();">관리자</a>
-		                    <ul class="nav flex-column sidebar_toggle3 nav-item-list">
-		                        <li class="nav-item" style="margin-left: 30px;">
-		                            <a class="nav-link" href="${pageContext.request.contextPath}/client/list" style="color:white">입학학생 신청관리</a>
-		                        </li>
-		                        <li class="nav-item" style="margin-left: 30px;">
-		                            <a class="nav-link" href="${pageContext.request.contextPath}/client/join" style="color:white">학생 회원가입</a>
-		                        </li>
-		                        <li class="nav-item" style="margin-left: 30px;">
-		                            <a class="nav-link" href="${pageContext.request.contextPath}/professor/regist" style="color:white">교수 회원가입</a>
-		                        </li>
-		                        <li class="nav-item" style="margin-left: 30px;">
-		                            <a class="nav-link" href="${pageContext.request.contextPath}/admin/admin_student_list" style="color:white">학생 정보관리</a>
-		                        </li>
-		                        <li class="nav-item" style="margin-left: 30px;">
-		                             <a class="nav-link" href="#" style="color:white">회원관리</a>
-		                        </li>
-		                        <li class="nav-item" style="margin-left: 30px;">
-		                            <a class="nav-link" href="${pageContext.request.contextPath}/admin/major_add" style="color:white">학과등록</a>
-		                        </li>
-		                        <li class="nav-item" style="margin-left: 30px;">
-		                            <a class="nav-link" href="${pageContext.request.contextPath}/admin/classSubList" style="color:white">강의목록</a>
-		                        </li>
-		                        <li class="nav-item" style="margin-left: 30px;">
-		                            <a class="nav-link" href="#" style="color:white">휴학/복학관리</a>
-		                            <a class="nav-link" href="${pageContext.request.contextPath}/admin/off_list" style="color:white">휴학관리</a>
-		                        </li>
-		                        <li class="nav-item" style="margin-left: 30px;">
-		                            <a class="nav-link" href="${pageContext.request.contextPath}/admin/on_list" style="color:white">복학관리</a>
-		                        </li>
-		                    </ul>
-	                    </c:if>
-	                    
-                    <div class="nav-empty">
-                        
+    <div class="l_header">
+        <header class="header">
+            <div class="header_left"> 
+                <div class="site">
+                    <div class="site_logo">
+                        <a href="#">
+                            <div class="site_logo_img"></div>
+                        </a>
                     </div>
-        </ul>
-    </aside>
-    <section class="container2">
-        <div class="up_background container-fluid">
- 
-          	<button class="btn_slide" style="text-align: left;" onclick="toggleSidebar();">&#8801;</button>
-<!-- 	            <form action="logout" method="post"> -->
-					<c:if test="${userinfo.student_auth eq '학생'}">             
-	                	<span class="col-8 title_font" style="text-align: right;">${userinfo.student_name}님 환영해요</span>
-	                </c:if>
-	                <c:if test="${admininfo.admin_auth eq '관리자'}">	                
-	                	<span class="col-8 title_font" style="text-align: right;">${admininfo.admin_auth}님 환영해요</span>
-	                </c:if>
-	                <c:if test="${profeinfo.profe_auth eq '교수'}">	                
-	                	<span class="col-8 title_font" style="text-align: right;">${profeinfo.profe_name}교수님 환영해요</span>
-	                </c:if>
-<!-- 	                <span class="col-4 title_font" style="text-align: center;">KH 대학교 -->
-<%-- 	                <c:if test="${userinfo != null || admininfo != null}"> --%> 
-
-	                <c:if test="${userinfo != null || profeinfo != null || admininfo != null}">	                
-	                	<a href="${pageContext.request.contextPath}/member/logout"><img src="${pageContext.request.contextPath}/resources/img/logout2.png" width="35px" height="30px" style="margin-bottom: 12px;"></a>
-	                </c:if>
-<!-- 	                </span> -->
-	                
-<!-- 	        	</form> -->
-
-
+                    <div class="site-family">
+                        <button class="site-family_button">
+                            MENU
+                            <div style="float: right;">
+                                <img src="https://talk.op.gg/images/icon-dropdown-down-wh@2x.png" width="30px" style="margin-top: -7px;">
+                            </div>
+                        </button>
+                        <ul class="site-family-list">
+                            <li class="site-family-list_title">
+                                    <img src="resources/img/footerlogo.png" width="74" alt="BK.GG">
+                            </li>
+                            <li class="site-family-list_item">
+                                <a href="#">
+                                    <span class="site-family-icon">
+                                        <img class="site-family_icon" src="resources/img/lion.jpg" alt="lion" height="24">
+                                    </span> 
+                                    <span class="site-family_name">자유게시판</span>
+                                 </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header_right"> 
+                <div class="site">
+                    <div class="site_logo">
+                        <button class="login_button">로그인</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+</body>
+</html>
