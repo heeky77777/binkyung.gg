@@ -17,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
 <mapper namespace="member">
 
-
+	<!-- 회원가입 -->
 	<insert id="member_join" parameterType="memberDto">
 		insert into member values(
 			member_no_seq.nextval, #{member_id}, #{member_pw}, #{member_name}, #{member_nick}, #{member_birth},
@@ -25,15 +25,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			)
 	</insert>	
 	
-	<select id="member_select" parameterType="String" resultType="memberDto">
-		select * from member where member_id = #{member_id}
+	<!-- 로그인 중복검사 -->
+	<select id="find_id" parameterType="String" resultType="memberDto">
+		select * from member where member_id = #{member_id}	
 	</select>
 	
-	<select id="member_login" parameterType="memberDto" resultType="memberDto">
+	<select id="member_find" parameterType="memberDto" resultType="memberDto">
 		select * from member where member_id = #{member_id} and member_pw = #{member_pw}
 	</select>
-
-
+	
 
 </mapper>
 

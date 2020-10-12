@@ -11,8 +11,7 @@ public class MemberDaoImpl implements MemberDao {
 	
 	@Autowired
 	private SqlSession sqlSession;
-	
-		
+
 	@Override
 	public void member_join(MemberDto memberDto) {
 		
@@ -20,20 +19,22 @@ public class MemberDaoImpl implements MemberDao {
 		
 	}
 
-	@Override
-	public MemberDto member_select(String member_id) {
-		
-		MemberDto member = sqlSession.selectOne("member.member_select", member_id);
-		
-		return member;
-	}
 
 	@Override
-	public MemberDto member_login(MemberDto memberDto) {
+	public MemberDto find_id(String member_id) {
 		
-		MemberDto member_login = (MemberDto) sqlSession.selectOne("member.member_login", memberDto);
+		MemberDto find_id =  sqlSession.selectOne("member.find_id", member_id);
 		
-		return member_login;
+		return find_id;
 	}
+
+
+	@Override
+	public MemberDto member_find(MemberDto memberDto) {
+		
+		MemberDto member_find = sqlSession.selectOne("member.member_find", memberDto);
+		
+		return member_find;
+	}	
 
 }
