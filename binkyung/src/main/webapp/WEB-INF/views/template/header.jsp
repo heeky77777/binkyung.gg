@@ -223,10 +223,16 @@
                         <button class="login_button">
                         	<a href="${pageContext.request.contextPath}/member/login">로그인</a>
                         </button> 
+                        <button class="login_button">
+                        	<a href="${pageContext.request.contextPath}/member/join">회원가입</a>
+                        </button> 
                     </c:if>
                     <c:if test="${userinfo!=null}">    
                         <button class="login_button">
                         	<a href="${pageContext.request.contextPath}/member/logout">로그아웃</a>
+                        </button>
+                        <button class="login_button">
+                        	<a href="${pageContext.request.contextPath}/member/mypage?member_no=${userinfo.member_no}">내정보보기</a>
                         </button>
                     </c:if>
                     </div>
