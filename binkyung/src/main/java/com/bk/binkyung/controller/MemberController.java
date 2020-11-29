@@ -1,8 +1,11 @@
 package com.bk.binkyung.controller;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,10 +43,12 @@ public class MemberController {
 		if(find_id == null) {
 			
 			memberDao.member_join(memberDto);
+			return "redirect:/member/joincomp";
 			
 		}
-
-		return "redirect:/member/join";
+		else {			
+			return "redirect:/member/joinerror";
+		}
 	}
 	
 	
@@ -80,5 +85,133 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
+	//정보보기
+	@GetMapping("/mypage")
+	public String mypage(@RequestParam int member_no, Model model) {
 		
+		MemberDto memberDto = memberDao.find_no(member_no);
+		
+		model.addAttribute("memberDto", memberDto);
+		
+		
+		return "member/mypage";
+	}
+	
+	
+	
+	//정보 수정
+	@GetMapping("/edit")
+	public String edit(@RequestParam int member_no, Model model) {
+		MemberDto find_no = memberDao.find_no(member_no);
+		model.addAttribute("find_no",find_no);
+		
+		return "member/edit";
+	}
+	
+	//정보수정
+	@PostMapping("/edit")
+	public String edit(@ModelAttribute MemberDto memberDto) {
+		
+		memberDao.member_edit(memberDto);
+		
+		return "member/mypage";
+	}
+	
+	//회원탈퇴
+	@PostMapping("/delete")
+	public String delete(@ModelAttribute MemberDto memberDto, HttpSession session) {
+		
+		memberDao.member_delete(memberDto);
+		session.removeAttribute("userinfo");
+		
+		
+		return"redirect:/";
+	}
+	
+	
+	
+	//중복가입 에러
+	@GetMapping("/joinerror")
+	public String joinerror() {
+				
+		return"member/joinerror";
+	}
+	
+	//가입을 축하합니다
+	@GetMapping("/joincomp")
+	public String joincomp() {
+		
+		return "member/joincomp";
+	}
+	
+	//아디찾기
+	@GetMapping("/find_id")
+	public String find_id() {
+		
+		
+		return"member/find_id";
+	}
+	
+	//아이디찾기
+	@PostMapping("/find_id")
+	public String find_id(@ModelAttribute MemberDto memberDto, Model model) {
+		
+		MemberDto memberDto2 = memberDao.member_id(memberDto);
+		
+		model.addAttribute("memberDto",memberDto2);
+		
+		
+		
+		return"member/find_id_comp";
+	}
+	
+	//비밀번호 찾기
+	@GetMapping("/find_pw")
+	public String find_pw () {
+		
+		return"member/find_pw";
+	}
+	
+	//비밀번호 찾기
+	@PostMapping("/find_pw")
+	public String find_pw(@ModelAttribute MemberDto memberDto, Model model) {
+		
+		MemberDto find_pw = memberDao.member_find_pw(memberDto); //회원정보 찾고 비밀번호를 담아!!!
+		
+		model.addAttribute("memberDto", find_pw); //찾은 비밀번호 정보를 memberDto에 담아!!!! 
+		
+		return "member/find_pw_comp";
+	}
+	
+	//비밀번호 변경
+	@GetMapping("/member_pw_edit")
+	public String member_pw_edit(@RequestParam int member_no, Model model) {
+		
+		MemberDto member_no1 = memberDao.find_no(member_no);
+		
+		model.addAttribute("memberDto", member_no1);
+		
+		
+		return "member/member_pw_edit";
+	}
+	
+	//비밀번호 변경
+	@PostMapping("/member_pw_edit")
+	public String member_pw_edit(@ModelAttribute MemberDto memberDto) {
+		
+						
+		memberDao.member_pw_edit(memberDto);	
+		
+		
+		return "member/change_pw_comp";
+	}
+	
+		
+	@GetMapping("/popup")
+	public String popup() {
+		
+		return"member/popup";
+	}
+	
+	
 }

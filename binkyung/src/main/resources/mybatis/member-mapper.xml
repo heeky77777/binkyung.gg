@@ -34,7 +34,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from member where member_id = #{member_id} and member_pw = #{member_pw}
 	</select>
 	
-
+	<update id="member_edit" parameterType="memberDto">
+		update member set member_pw = #{member_pw}, member_nick = #{member_nick}, member_addr = #{member_addr}, member_extra_addr = #{member_extra_addr}
+	</update>
+	
+	<select id="find_no" parameterType="int" resultType="memberDto">
+		select * from member where member_no = #{member_no}
+	</select>
+	
+	<delete id="member_delete">
+		delete member where member_no = #{member_no}
+	</delete>
+	
+	<select id="member_id" parameterType="memberDto" resultType="memberDto">
+		select * from member where member_name = #{member_name} and member_birth = #{member_birth}
+	</select>
+	
+	<!-- 비밀번호 찾기  -->
+	<select id="member_find_pw" parameterType="memberDto" resultType="memberDto">
+		select * from member where member_id = #{member_id} and member_name = #{member_name} and member_birth = #{member_birth}
+	</select>
+	
+	<!-- 비밀번호 변경 -->
+	<update id="member_pw_edit" parameterType="memberDto">
+		update member set member_pw = #{member_pw} where member_no = #{member_no}
+	</update>
+	
+	
 </mapper>
 
 
